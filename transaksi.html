@@ -4,193 +4,398 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Transaksi</title>
-</head>
-<body background="wal.jpg" width="100%" >
-    </table>
-    <h1 align="center">GROWTH</h1></th>
-   
-<hr>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        :root {
+            --primary: #3a7d44;
+            --primary-light: #6cba7c;
+            --secondary: #ffa5ab;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #333;
+            --text-light: #6c757d;
+        }
 
-    <table border="0" width="30%" align="center">
-        <tr>
-        <th><a href="index.html" style="color: black;">HOME</a></th>
-        <th><a href="produk.html"  style="color: black;">PRODUK</a></th>
-        <th><a href="about.html" style="color: black;">TENTANG</a></th>
-        <th bgcolor="green"><a href="transaksi.html" style="color: white;">PESAN</a></th>
-</tr>
-</table>
-    
-        <table align="center" border="0">
-            <tr>
-                <td align="center " colspan="2"><h2>Transaksi</h2>
-    <form name="form-transaksi"></td></tr>
-            <tr>
-                <td al>Nama Lengkap</td>
-                <td>: <input type="text" name="name" size="20" required /></td>
-            </tr>
-            <tr>
-                <td>Produk </td>
-                <td>
-                    <table>
-        
-                            <tr align="center ">
-                                <th >Produk</th>
+        /* BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f5f5f5;
+            position: relative;
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* LAYOUT */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* NAVIGATION */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav .active {
+            color: var(--primary);
+        }
+
+        nav .active::after {
+            width: 100%;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        hr {
+            border: 1px solid #fff;
+            margin: 20px 0;
+        }
+
+        .form-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #3e8e41;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .invoice-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .invoice-container hr {
+            border: 1px solid #eee;
+            margin: 10px 0;
+        }
+
+        .invoice-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .invoice-container li {
+            padding: 5px 0;
+            border-bottom: 1px dotted #eee;
+        }
+
+        .total {
+            font-size: 1.2em;
+            text-align: right;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+      <header>
+        <div class="container header-container">
+            <div class="logo">GROWTH</div>
+            <nav>
+                <ul>
+                    <li><a href="cobain.html" >HOME</a></li>
+                    <li><a href="produk.html" >PRODUK</a></li>
+                    <li><a href="about.html" >TENTANG</a></li>
+                    <li><a href="transaksi.html" style="color: white; background-color: var(--primary); padding: 8px 15px; border-radius: 5px;">PESAN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="form-container">
+        <h2 align="center">Transaksi</h2>
+        <form name="form-transaksi" onsubmit="return handleSubmit(event);">
+            <table>
+                <tr>
+                    <td>Nama Lengkap</td>
+                    <td>: <input type="text" name="name" required /></td>
+                </tr>
+                <tr>
+                    <td>Produk</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <th>Produk</th>
                                 <th>Pilih</th>
                                 <th>Quantity</th>
                             </tr>
-                    
-                       
                             <tr>
                                 <td>Bouquet Mawar Merah</td>
+                                <td><input type="checkbox" name="product1_selected" value="Bouquet Mawar Merah" /></td>
                                 <td>
-                                    <input type="checkbox" id="product1" name="product1_selected" value="Bouquet Mawar Merah" />
-                                </td>
-                                <td align="center">
-                                    <select size="1" name="Quantity">
-                                        <option>-</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select name="product1_quantity">
+                                        <option value="0">-</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </td>
-                                
                             </tr>
                             <tr>
                                 <td>Bouquet Lily</td>
+                                <td><input type="checkbox" name="product2_selected" value="Bouquet Lily" /></td>
                                 <td>
-                                    <input type="checkbox" id="product2" name="product2_selected" value="Bouquet Lily Putih" />
-                                </td>
-                                <td align="center">
-                                    <select size="1" name="Quantity">
-                                       <option>-</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select name="product2_quantity">
+                                        <option value="0">-</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </td>
-                                
                             </tr>
                             <tr>
                                 <td>Bouquet Tulip Putih</td>
+                                <td><input type="checkbox" name="product3_selected" value="Bouquet Tulip Putih" /></td>
                                 <td>
-                                    <input type="checkbox" id="product3" name="product3_selected" value="Bouquet Tulip Warna-warni" />
-                                </td>
-                                <td align="center">
-                                    <select size="1" name="Quantity">
-                                        <option>-</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select name="product3_quantity">
+                                        <option value="0">-</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </td>
-                                
                             </tr>
                             <tr>
                                 <td>Bouquet Gerbera</td>
+                                <td><input type="checkbox" name="product4_selected" value="Bouquet Gerbera" /></td>
                                 <td>
-                                    <input type="checkbox" id="product4" name="product4_selected" value="Bouquet Gerbera Cerah" />
-                                </td>
-                                <td align="center">
-                                    <select size="1" name="Quantity">
-                                        <option>-</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select name="product4_quantity">
+                                        <option value="0">-</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </td>
-                                
                             </tr>
-                            <td>Bouquet Anggrek</td>
+                            <tr>
+                                <td>Bouquet Anggrek</td>
+                                <td><input type="checkbox" name="product5_selected" value="Bouquet Anggrek" /></td>
                                 <td>
-                                    <input type="checkbox" id="product4" name="product4_selected" value="Bouquet Gerbera Cerah" />
-                                </td>
-                                <td align="center">
-                                    <select size="1" name="Quantity">
-                                        <option>-</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select name="product5_quantity">
+                                        <option value="0">-</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </td>
-                                
                             </tr>
-                            <td>Bouquet Aster</td>
-                                <td>
-                                    <input type="checkbox" id="product4" name="product4_selected" value="Bouquet Gerbera Cerah" />
-                                </td>
-                                <td align="center">
-                                    <select size="1" name="Quantity">
-                                        <option>-</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </td>
-                                
-                            </tr>
-                            <td>Bouquet Hydrangea</td>
-                                <td>
-                                    <input type="checkbox" id="product4" name="product4_selected" value="Bouquet Gerbera Cerah" />
-                                </td>
-                                <td align="center">
-                                    <select size="1" name="Quantity">
-                                        <option>-</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </td>
-                                
-                            </tr>
-                            <td>Bouquet Freesia</td>
-                                <td>
-                                    <input type="checkbox" id="product4" name="product4_selected" value="Bouquet Gerbera Cerah" />
-                                </td>
-                                <td align="center">
-                                    <select size="1" name="Quantity">
-                                       <option>-</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </td>
-                                
-                            </tr>
-                      
-                    </table>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alamat</td>
+                    <td>: <textarea name="alamat" cols="40" rows="3" required></textarea></td>
+                </tr>
+                <tr>
+                    <td>Keterangan</td>
+                    <td>: <textarea name="keterangan" cols="40" rows="5"></textarea></td>
+                </tr>
+            </table>
+            <hr />
+            <div class="btn-group">
+                <input type="submit" class="btn" value="Pesan" />
+                <input type="reset" class="btn" value="Reset" />
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Mencegah pengiriman formulir default
+
+            const form = event.target;
+            const name = form.name.value;
+            const alamat = form.alamat.value;
+            const keterangan = form.keterangan.value;
+
+            let selectedProducts = [];
+            let totalQuantity = 0;
+            for (let i = 1; i <= 5; i++) {
+                const productSelected = form[`product${i}_selected`];
+                const productQuantity = form[`product${i}_quantity`];
+                if (productSelected.checked) {
+                    const quantity = parseInt(productQuantity.value);
+                    selectedProducts.push({
+                        name: productSelected.value,
+                        quantity: quantity
+                    });
+                    totalQuantity += quantity;
+                }
+            }
+
+            // Generate invoice HTML
+            const invoiceHTML = `
+                <div class="invoice-container">
+                    <h2>Invoice Pembayaran</h2>
+                    <p><strong>No. Invoice:</strong> INV-${Date.now()}</p>
                     
-                </td>
-            </tr>
-            <tr>
-                <td>Alamat</td>
-                <td>: <textarea name="alamat" cols="40" rows="3" required></textarea></td>
-            </tr>
-            <tr>
-                <td>Keterangan</td>
-                <td>: <textarea name="keterangan" cols="40" rows="5"></textarea></td>
-            </tr>
-           
-        </table>
-        <hr />
-        <input type="submit" value="Pesan" />
-        <input type="reset" value="Reset" />
-    </form>
+                    <hr>
+                    <p><strong>Nama Pembeli:</strong> ${name}</p>
+                    <p><strong>Alamat:</strong> ${alamat}</p>
+                    <p><strong>Keterangan:</strong> ${keterangan}</p>
+                    <hr>
+                    <h3>Daftar Pesanan:</h3>
+                    <ul>
+                        ${selectedProducts.map(product => 
+                            `<li>${product.name} - ${product.quantity} item</li>`
+                        ).join('')}
+                    </ul>
+                    <hr>
+                    <p class="total"><strong>Total Pembayaran:</strong> Rp ${totalQuantity * 50000}</p>
+                    <button class="btn" onclick="window.print()">Cetak Invoice</button>
+                </div>
+            `;
+            
+            // Display invoice
+            document.body.innerHTML = invoiceHTML;
+        }
+    </script>
 </body>
 </html>
-

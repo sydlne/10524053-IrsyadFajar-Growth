@@ -3,65 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABOUT</title>
+    <title>Tentang Growth</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary: #3a7d44;
+            --primary-light: #6cba7c;
+            --secondary: #ffa5ab;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #333;
+            --text-light: #6c757d;
+        }
+
+        /* BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f5f5f5;
+            position: relative;
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* LAYOUT */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* NAVIGATION */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav .active {
+            color: var(--primary);
+        }
+
+        nav .active::after {
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        hr {
+            border: 1px solid #fff;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        a:hover {
+            color: #4CAF50;
+        }
+
+        marquee {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+       /* FOOTER */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-title {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #adb5bd;
+        }
+        
+
+        img {
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
-<body background="wal.jpg" width="100%"  >
+<body>
 
+    <header>
+        <div class="container header-container">
+            <div class="logo">GROWTH</div>
+            <nav>
+                <ul>
+                    <li><a href="cobain.html" >HOME</a></li>
+                    <li><a href="produk.html" >PRODUK</a></li>
+                    <li><a href="about.html" class="active">TENTANG</a></li>
+                    <li><a href="transaksi.html" style="color: white; background-color: var(--primary); padding: 8px 15px; border-radius: 5px;">PESAN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-</table>
-<!--header-->
-    <h1 align="center">GROWTH</h1></th>  
-<hr>
-<!--menu-->
-    <table border="0" width="30%" align="center">
+    <table border="1" width="60%" cellspacing="0" cellpadding="8" align="center">
         <tr>
-        <th><a href="index.html" style="color: black;">HOME</a></th>
-        <th><a href="produk.html"  style="color: black;">PRODUK</a></th>
-        <th><a href="about.html" style="color: black;">TENTANG</a></th>
-        <th bgcolor="green"><a href="transaksi.html" style="color: white;">PESAN</a></th>
-</tr>
-</table>
-  
-<td>
-  <table border="1" width="60%" cellspacing="0" cellpadding="8" bgcolor="lightgreen" align="center">
-    <tr>
-      <th>PROFILE</th>
-      <th>ABOUT</th>
-    </tr>
-    <tr>
-      <td>
-      <img src="me.jpeg" alt="muhamad irsyad fajar" width="100%">
-      <strong>MUHAMAD IRSYAD FAJAR</strong><br>
-      <p>SISTEM INFORMASI</p>
-    </td>
-<td >
-           <p text align="justify"> Selamat datang di Growth, toko bunga yang tumbuh bersama cinta dan keindahan. Kami percaya bahwa setiap bunga 
+            <th>PROFILE</th>
+            <th>ABOUT</th>
+        </tr>
+        <tr>
+            <td>
+                <img src="me.jpeg" alt="Muhamad Irsyad Fajar">
+                <strong>MUHAMAD IRSYAD FAJAR</strong><br>
+                <p>SISTEM INFORMASI</p>
+            </td>
+            <td>
+                <p align="justify">Selamat datang di Growth, toko bunga yang tumbuh bersama cinta dan keindahan. Kami percaya bahwa setiap bunga 
                 membawa pesan dan emosi yang tak tergantikan. Berawal dari kecintaan terhadap alam dan seni merangkai, Growth 
                 hadir untuk menghadirkan rangkaian bunga segar yang bukan hanya indah dipandang, tapi juga bermakna. Dengan 
                 semangat tumbuh dan berkembang, kami melayani berbagai kebutuhan bunga untuk momen spesial Anda mulai dari 
                 hadiah ulang tahun, pernikahan, ucapan selamat, hingga duka cita. Setiap rangkaian disusun dengan hati oleh florist berpengalaman, menggunakan bunga-bunga pilihan terbaik.
                 Di Growth, kami tidak hanya menjual bunga — kami menyampaikan perasaan.</p>
-        </td></tr>
-    <tr>
-      <th>Informasi Kontak</th>
-      <th><marquee behavior="" direction="left">TERIMA KASIH SUDAH BERKUNJUNG</marquee></th>
-    </tr>
-    <tr>
-      <td>
-      <p>📱 WhatsApp: 0812-1469-2013</p>
-      <p>📍 Alamat: Jl. Tubagus Ismail</p>
-      <p>✉️ Email: irsyadfzza@gmail.com</p>
-    </td>
-    <td align="center">
-      TERIMA KASIH
-    </td>
-    </tr>
-</table>
-<table align="center">
-<tr >
-  <footer>
-<td><p >&copy; 2025 Growth</p></td><td><p> WhatsApp: 081314692013 </p></td>
-</tr>
-</footer>
-</table>
-  
+            </td>
+        </tr>
+        <tr>
+            <th>Informasi Kontak</th>
+            <th><marquee behavior="alternate" direction="left">TERIMA KASIH SUDAH BERKUNJUNG</marquee></th>
+        </tr>
+        <tr ">
+            <td>
+                <p>📱 WhatsApp: 0812-1469-2013</p>
+                <p>📍 Alamat: Jl. Tubagus Ismail</p>
+                <p>✉️ Email: irsyadfzza@gmail.com</p>
+            </td>
+            <td align="center">
+                TERIMA KASIH
+            </td>
+        </tr>
+    </table>
+
+     <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">GROWTH</h3>
+                    <p>Florist profesional yang menyediakan rangkaian bunga segar dan indah untuk setiap momen spesial dalam hidup Anda.</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="produk.html">Produk</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="transaksi.html">Pesan Sekarang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Kontak Kami</h3>
+                    <ul class="footer-links">
+                        <li>Jl. Tubagus Ismail, Bandung</li>
+                        <li>0812-1469-2013</li>
+                        <li>irsyadfzza@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Growth Florist. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

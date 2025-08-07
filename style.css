@@ -1,0 +1,123 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('wal.jpg');
+    background-size: cover;
+    color: #333;
+}
+
+/* Header styles */
+h1 {
+    text-align: center;
+    color: #4CAF50; /* Green color */
+    margin: 20px 0;
+}
+
+/* Navigation styles */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+th {
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #4CAF50; /* Change color on hover */
+}
+
+/* Main content styles */
+#header {
+    position: absolute;
+    left: 10%;
+    top: 35%;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Marquee styles */
+marquee {
+    background-color: lightyellow;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Sidebar styles */
+td {
+    vertical-align: top;
+}
+
+table[border="1"] {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table[border="1"] th {
+    background-color: lightgreen;
+    color: black;
+    padding: 10px;
+}
+
+table[border="1"] td {
+    padding: 10px;
+}
+
+/* Product styles */
+.product {
+    text-align: center;
+}
+
+.product img {
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+.product h2 {
+    font-size: 1.5rem;
+    color: #4CAF50; /* Green color */
+}
+
+.product p {
+    font-size: 1rem;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+}
+
+footer p {
+    margin: 5px 0;
+}

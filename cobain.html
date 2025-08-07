@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRODUK</title>
-</head>
-<body background="wal.jpg" width="100%" >
-  <style>
+    <title>GROWTH - Florist Shop</title>
+    <style>
         /* VARIABLES */
         :root {
             --primary: #3a7d44;
@@ -388,14 +386,20 @@
 
         
     </style>
-     <!-- HEADER -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
     <header>
         <div class="container header-container">
             <div class="logo">GROWTH</div>
             <nav>
                 <ul>
-                    <li><a href="cobain.html" >HOME</a></li>
-                    <li><a href="produk.html" class="active">PRODUK</a></li>
+                    <li><a href="cobain.html" class="active">HOME</a></li>
+                    <li><a href="produk.html">PRODUK</a></li>
                     <li><a href="about.html">TENTANG</a></li>
                     <li><a href="transaksi.html" style="color: white; background-color: var(--primary); padding: 8px 15px; border-radius: 5px;">PESAN</a></li>
                 </ul>
@@ -403,13 +407,55 @@
         </div>
     </header>
 
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>WELCOME TO GROWTH</h1>
+            <p>Bunga bukan hanya hadiah, tapi bahasa hati. Rangkaian bouquet unik kami siap menyampaikan perasaanmu dengan cara yang istimewa.</p>
+        </div>
+    </section>
 
-    
+    <!-- BANNER -->
+    <div class="banner">
+        <marquee behavior="" direction="left">Hai! Selamat Datang dan Terima Kasih Sudah Berkunjung — Semoga Harimu Menyenangkan!
+    </marquee></div>
 
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <div class="layout">
+            <!-- SIDEBAR -->
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Rekomendasi Bunga</h3>
+                    <div class="sidebar-product">
+                        <img src="lily putih.jpg" alt="Bouquet Lily Putih dengan rangkaian mewah dalam vas kristal">
+                        <h4>Bouquet Lily Putih</h4>
+                        <p>Elegan dan cocok untuk acara formal.</p>
+                        <a href="#" class="add-to-cart">Lihat Detail</a>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Informasi Kontak</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a740e1de-3a36-4191-bab8-3849fa2bc154.png" alt="Icon WhatsApp" style="width:20px;height:20px;">
+                            <span>WhatsApp: 0812-1469-2013</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/698b76a3-21df-4623-8277-3b4c4ff901b1.png" alt="Icon Lokasi" style="width:20px;height:20px;">
+                            <span>Alamat: Jl. Tubagus Ismail</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d6495684-3b64-4a9e-bee8-a4718d23cc9e.png" alt="Icon Email" style="width:20px;height:20px;">
+                            <span>Email: irsyadfzza@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-       <!-- PRODUCTS SECTION -->
+            <!-- PRODUCTS SECTION -->
             <div class="products-section">
-                <h2 class="section-title">PRODUK</h2>
+                <h2 class="section-title">Produk Unggulan Kami</h2>
                 <div class="products-grid">
                     <!-- PRODUCT 1 -->
                     <div class="product-card">
@@ -482,50 +528,7 @@
                             <a href="transaksi.html" class="add-to-cart">BELI</a>
                         </div>
                     </div>
-                    <!-- PRODUCT 7 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="hydagea.jpg" alt="keanggunan, keindahan, rasa syukur, dan ketulusan hati">
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Bouquet hydagea</h3>
-                            <p class="product-description">keanggunan, keindahan, rasa syukur, dan ketulusan hati.</p>
-                            <a href="transaksi.html" class="add-to-cart">BELI</a>
-                        </div>
-                    </div>
-                    <!-- PRODUCT 8 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="mawar damascena.jpg" alt="cinta, keindahan, kemurnian, dan keyakinan.">
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Bouquet mawar damascena</h3>
-                            <p class="product-description">cinta, keindahan, kemurnian, dan keyakinan.</p>
-                            <a href="transaksi.html" class="add-to-cart">BELI</a>
-                        </div>
-                    </div>
-                    <!-- PRODUCT 9 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="lavender.jpg" alt="ketenangan, kedamaian, kemurnian, keanggunan, dan pengabdian. Aroma yang menenangkan bisa membantu relaksasi dan pengurangan stres.">
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Bouquet lavender</h3>
-                            <p class="product-description"> ketenangan, kedamaian, kemurnian, keanggunan, dan pengabdian. Aroma yang menenangkan bisa membantu relaksasi dan pengurangan stres.</p>
-                            <a href="transaksi.html" class="add-to-cart">BELI</a>
-                        </div>
-                    </div>
-                    <!-- PRODUCT 10 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="white.jpg" alt="kemurnian, kesucian, kepolosan, dan kesederhanaan. Bunga putih juga bisa melambangkan simpati, penghormatan, dan awal yang baru. ">
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Bouquet white flower</h3>
-                            <p class="product-description">Skemurnian, kesucian, kepolosan, dan kesederhanaan. Bunga putih juga bisa melambangkan simpati, penghormatan, dan awal yang baru.</p>
-                            <a href="transaksi.html" class="add-to-cart">BELI</a>
-                        </div>
-                    </div>
+                    
                   
                     </div>
                 </div>
@@ -564,3 +567,5 @@
             </div>
         </div>
     </footer>
+</body>
+</html>
